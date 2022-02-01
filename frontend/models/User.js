@@ -1,7 +1,7 @@
-import Usuario from "../../backend/models/Usuario";
 
-class Usuario {
-  constructor(nombre,apellido,email,fecNac,contraseña,) {
+
+class User {
+  constructor(nombre,apellido,email,fecNac,sexo,nacionalidad,tajetadeCredito) {
     this.nombre = nombre;
     this.apellido = apellido;
     this.email = email;
