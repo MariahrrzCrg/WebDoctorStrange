@@ -60,8 +60,8 @@ class UI {
     }, secondsToRemove);
   }
 
-  async deleteBook(UsuairoId) {
-    await UsuarioService.deleteBook(UsuarioId);
+  async deleteBook(UsuarioId) {
+    await UsuarioService.deleteUsuario(UsuarioId);
     this.renderUsuario();
   }
 

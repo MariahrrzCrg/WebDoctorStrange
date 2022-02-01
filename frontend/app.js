@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-document.getElementById('book-form')
+document.getElementById('usuario-form')
   .addEventListener('submit', function(e) {
 
     const nombre = document.getElementById('nombre').value;
@@ -18,6 +18,7 @@ document.getElementById('book-form')
     const sexo= document.getElementById('sexo').value;
     const fecNac= document.getElementById('fecNac').value;
     const nacionalidad= document.getElementById('nacionalidad').value;
+    const tajetadeCredito= document.getElementById('tajetadeCredito').value;
     
    
 
@@ -28,6 +29,8 @@ document.getElementById('book-form')
     formData.append('sexo', sexo);
     formData.append('fecNac', fecNac);
     formData.append('nacionalidad', nacionalidad);
+    formData.append('tajetadeCredito', tajetadeCredito);
+    
    
     
 
@@ -35,10 +38,10 @@ document.getElementById('book-form')
     const ui = new UI();
 
     
-    const usuario = new usuario(nombre, apellido, email,fecNac,nacionalidad,sexo);
+    const usuario = new usuario(nombre, apellido, email,fecNac,nacionalidad,sexo,tajetadeCredito);
 
     
-    if (nombre === '' || apellido === '' || email === ''  || fecNac == '' || nacionalidad == '' || sexo == '') {
+    if (nombre === '' || apellido === '' || email === ''  || fecNac == '' || nacionalidad == '' || sexo == '' ||tajetadeCredito =='')   {
       ui.renderMessage('Please fill all the fields', 'error', 3000);
     } else {
       

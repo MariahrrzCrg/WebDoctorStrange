@@ -7,6 +7,7 @@ const UsuarioSchema = new Schema({
      fecNac : { type: Date, default: Date.now },
     sexo : { type: String, required: true },
     nacionalidad : { type: String, required: true },
+    tajetadeCredito : { type: String, required: true },
    
 });
 
