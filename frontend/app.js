@@ -1,57 +1,60 @@
 import "./styles/app.css";
 
-import Book from './models/Book.js';
+import usuario from './models/usuario.js';
 import UI from './UI.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const ui = new UI();
-  ui.renderBooks();
+  ui.renderUsuario();
 });
 
 
 document.getElementById('book-form')
   .addEventListener('submit', function(e) {
 
-    const title = document.getElementById('title').value;
-    const author = document.getElementById('author').value;
-    const isbn = document.getElementById('isbn').value;
+    const nombre = document.getElementById('nombre').value;
+    const apellido = document.getElementById('apellido').value;
+    const email = document.getElementById('email').value;
+    const sexo= document.getElementById('sexo').value;
+    const fecNac= document.getElementById('fecNac').value;
+    const nacionalidad= document.getElementById('nacionalidad').value;
     
-    const image = document.getElementById('image').files;
+   
 
     const formData = new FormData();
-    formData.append('image', image[0]);
-    formData.append('title', title);
-    formData.append('author', author);
-    formData.append('isbn', isbn);
+    formData.append('nombre', nombre);
+    formData.append('apellido', apellido);
+    formData.append('email', email);
+    formData.append('sexo', sexo);
+    formData.append('fecNac', fecNac);
+    formData.append('nacionalidad', nacionalidad);
+   
+    
 
-    // for(var pair of formData.entries()) {
-    //   console.log(pair[0]+', '+pair[1]);
-    // }
-
-    // Instatiating the UI
+    
     const ui = new UI();
 
-    // New Book Object
-    const book = new Book(title, author, isbn);
+    
+    const usuario = new usuario(nombre, apellido, email,fecNac,nacionalidad,sexo);
 
-    // Validating User Input
-    if (title === '' || author === '' || isbn === '') {
+    
+    if (nombre === '' || apellido === '' || email === ''  || fecNac == '' || nacionalidad == '' || sexo == '') {
       ui.renderMessage('Please fill all the fields', 'error', 3000);
     } else {
-      // Pass the new book to the UI
-      ui.addANewBook(formData);
-      ui.renderMessage('New Book Added Successfully', 'success', 2000);
+      
+      ui.addANewUsuario(formData);
+      ui.renderMessage('New Usuario Added Successfully', 'success', 2000);
     }
 
     e.preventDefault();
   });
 
-document.getElementById('books-cards')
+document.getElementById('usuario-cards')
   .addEventListener('click', e => {
     const ui = new UI();
     if (e.target.classList.contains('delete')) {
-      ui.deleteBook(e.target.getAttribute('_id'));
-      ui.renderMessage('Book Deleted Successfully', 'success', 3000);
+      ui.deleteUsuario(e.target.getAttribute('_id'));
+      ui.renderMessage('Usuario Deleted Successfully', 'success', 3000);
     }
     e.preventDefault();
   });

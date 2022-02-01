@@ -8,14 +8,12 @@ const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
 
-// Initializations
+
 const app = express();
 require('./database');
 
-// settings
 app.set('port', process.env.PORT || 4000);
 
-// middlewares
 app.use(morgan('dev'));
 app.use(cors());
 const storage = multer.diskStorage({
@@ -24,12 +22,11 @@ const storage = multer.diskStorage({
         cb(null, new Date().getTime() + path.extname(file.originalname));
     }
 })
-app.use(multer({storage}).single('image'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 // routes
-app.use('/api/books', require('./routes/books'));
+app.use('/api/usuario', require('./routes/usuario'));
 
 // static files
 app.use(express.static(path.join(__dirname, 'public')));

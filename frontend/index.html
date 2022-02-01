@@ -6,15 +6,17 @@
   <title>Computer Products</title>
   <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
-</head>
-
+ </head>
+<style>
+body{background-image:url(https://a-static.besthdwallpaper.com/marvel-comics-action-hero-doctor-strange-fanart-wallpaper-2160x1440-41858_40.jpg);
+}
+</style>
 <body>
 
   <!-- NAVIGATION -->
   <nav class="navbar navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="/">Books App</a>
+      <a class="navbar-brand" href="/">Usuario App</a>
     </div>
   </nav>
 
@@ -22,29 +24,31 @@
     <div class="row">
       <div class="col-md-4">
 
-        <form id="book-form" class="card card-body">
+        <form id="usuario-form" class="card card-body">
           <div class="form-group">
-            <input type="text" id="title" class="form-control" placeholder="Book Title" autofocus>
+            <input type="text" id="Nombre" class="form-control" placeholder=" Nombre" autofocus>
           </div>
           <div class="form-group">
-            <input type="text" id="author" class="form-control" placeholder="Author">
+            <input type="text" id="Apellido" class="form-control" placeholder="Apellido">
           </div>
           <div class="form-group">
-            <input type="text" id="isbn" class="form-control" placeholder="ISBN">
+            <input type="text" id="Email" class="form-control" placeholder="Email">
           </div>
-          <div class="input-group mb-3">
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" id="image" required>
-                <label class="custom-file-label" for="image" aria-describedby="inputGroupFileAddon02">Choose Image</label>
-              </div>
-            </div>
+          <div class="form-group">
+            <input type="text" id="Sexo" class="form-control" placeholder="Sexo">
+          </div>
+          <div class="form-group">
+            <input type="text" id="FecNac" class="form-control" placeholder="FecNac">
+          </div>
+          <div class="form-group">
+            <input type="text" id="Nacionalidad" class="form-control" placeholder="Nacionalidad">
+          </div>
           <button type="Submit" class="btn btn-primary">
-            Save Book
+            Guardar Usuario
           </button>
         </form>
       </div>
-
-      <div class="col-md-8" id="books-cards">
+      <div class="col-md-8" id="usuario-cards">
       </div>
 
     </div>
